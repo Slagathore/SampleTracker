@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "DM Mono", monospace;
+  --font-body: "DM Sans", sans-serif;
+
+  --color-brand-50: #edfcf9;
+  --color-brand-400: #34d399;
+  --color-brand-500: #10b981;
+  --color-brand-600: #059669;
+  --color-brand-900: #064e3b;
+
+  --color-surface-900: #0a0f0d;
+  --color-surface-800: #0f1a14;
+  --color-surface-700: #162113;
+  --color-surface-600: #1e2e1f;
+  --color-surface-500: #2a3d2b;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fadeIn 0.4s ease-out;
+  --animate-slide-up: slideUp 0.3s ease-out;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    0% { transform: translateY(8px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+}
+
+body {
+  background-color: #0a0f0d;
+  color: #e2e8e4;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-data {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85em;
+  letter-spacing: 0.02em;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f1a14; }
+::-webkit-scrollbar-thumb { background: #2a3d2b; border-radius: 3px; }

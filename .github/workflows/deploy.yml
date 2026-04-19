@@ -1,0 +1,40 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build frontend
+        run: |
+          cd frontend/sample-tracker-ui
+          npm ci
+          npm run build
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.x'
+
+      - name: Publish backend
+        run: |
+          cd backend/SampleTracker.API
+          dotnet publish -c Release -o ./publish
+
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: sampletracker-api
+          publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
+          package: backend/SampleTracker.API/publish
