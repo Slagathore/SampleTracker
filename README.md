@@ -1,10 +1,28 @@
 # SampleTracker
 
-A production-quality **Lab Sample & Compliance Tracker** built as a full-stack portfolio project.
-Users log analytical samples, assign methods, track workflow status, and view a live dashboard.
-Clean architecture, real patterns, deployed to Azure as a single unit.
+**A laboratory sample-and-compliance tracking system (LIMS).** Log analytical
+samples, assign methods, drive them through a six-stage QC workflow, and export
+audit-ready records. Built and deployed full-stack on a single Azure App Service
+unit.
+
+### Live demo
+
+**https://sampletrackerccc.azurewebsites.net/**
+
+Click **"Login as guest"** to explore the full system. No account needed.
+
+> **Heads up on first load:** this runs on Azure's free tier, which sleeps the
+> app after periods of inactivity. The **first** request after a sleep can take
+> 30 to 60 seconds to wake the server. Give it a moment on the first load; it is
+> fast after that.
 
 ---
+
+## What it does
+
+Users log analytical samples, assign named methods, advance each sample through a
+status pipeline, and view a live dashboard. Clean architecture, real patterns,
+one deployment unit.
 
 ## Features
 
@@ -15,8 +33,7 @@ Clean architecture, real patterns, deployed to Azure as a single unit.
 - **Dashboard** — live stats chart powered by Recharts
 - **CSV Export** — one-click export of all sample records
 - **Swagger UI** — interactive API docs in development (`/swagger`)
-- **Azure Key Vault integration** — optional; reads `JwtKey` secret via Managed Identity when deployed
-
+- **Azure Key Vault integration** — reads `JwtKey` secret via Managed Identity when deployed
 ---
 
 ## Tech Stack
