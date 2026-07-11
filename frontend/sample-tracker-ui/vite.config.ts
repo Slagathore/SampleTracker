@@ -9,6 +9,10 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
+    // Moved off Vite's default 5173 to avoid colliding with DungeonMaster and
+    // Cognima Avatar Studio (both also defaulted to 5173). See CowLauncher ports registry.
+    port: 5178,
+    strictPort: true,
     proxy: {
       '/api': {
         target: 'http://localhost:5294',

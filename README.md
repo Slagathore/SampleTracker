@@ -172,7 +172,7 @@ This opens two terminal windows:
 | --------------- | ----------------------------- |
 | .NET backend    | http://localhost:5294         |
 | Swagger UI      | http://localhost:5294/swagger |
-| Vite dev server | http://localhost:5173         |
+| Vite dev server | http://localhost:5178         |
 
 ### 5 — Log in
 
