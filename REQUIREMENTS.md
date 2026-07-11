@@ -1,4 +1,4 @@
-# SampleTracker — Requirements
+# SampleTracker requirements
 
 All tools and dependencies needed to build and run this project locally.
 
@@ -12,7 +12,7 @@ Install all of the following before cloning. Verify each one with the listed com
 | ------------------------- | ---------------------- | ------------------ | ------------------------------------------------------------- |
 | .NET SDK                  | 10.x                   | `dotnet --version` | https://dotnet.microsoft.com/download                         |
 | Node.js                   | 18 LTS or later        | `node --version`   | https://nodejs.org                                            |
-| npm                       | 9+ (bundled with Node) | `npm --version`    | —                                                             |
+| npm                       | 9+ (bundled with Node) | `npm --version`    | n/a (ships with Node)                                         |
 | Git                       | Any                    | `git --version`    | https://git-scm.com                                           |
 | Azure CLI _(deploy only)_ | Latest                 | `az --version`     | https://learn.microsoft.com/en-us/cli/azure/install-azure-cli |
 
@@ -20,7 +20,7 @@ Install all of the following before cloning. Verify each one with the listed com
 
 ---
 
-## Backend — NuGet Packages
+## Backend NuGet packages
 
 Managed by `backend/SampleTracker.API/SampleTracker.API.csproj`. Restored automatically on `dotnet run` or `dotnet build`.
 
@@ -45,7 +45,7 @@ dotnet restore
 
 ---
 
-## Frontend — npm Packages
+## Frontend npm packages
 
 Managed by `frontend/sample-tracker-ui/package.json`. Install with `npm install`.
 
@@ -122,7 +122,7 @@ The backend reads configuration from `appsettings.json` and (locally) `appsettin
 | Key                         | Required | Description                                                               |
 | --------------------------- | -------- | ------------------------------------------------------------------------- |
 | `ConnectionStrings:Default` | Yes      | SQLite path (local) or SQL Server connection string (prod)                |
-| `Jwt:Key`                   | Yes      | Signing secret — minimum 32 characters                                    |
+| `Jwt:Key`                   | Yes      | Signing secret, minimum 32 characters                                     |
 | `Jwt:Issuer`                | Yes      | Token issuer claim (e.g. `SampleTracker`)                                 |
 | `Jwt:Audience`              | Yes      | Token audience claim (e.g. `SampleTrackerUsers`)                          |
 | `KeyVault:Uri`              | No       | Azure Key Vault URI; enables secret fetch at startup via Managed Identity |
