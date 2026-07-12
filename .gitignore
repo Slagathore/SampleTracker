@@ -24,3 +24,8 @@ backend/SampleTracker.API/wwwroot/index.html
 # OS
 .DS_Store
 Thumbs.db
+
+# AI assistant local files
+CLAUDE.md
+AGENTS.md
+.claude/
